@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,6 +13,7 @@ import {
 } from '@/components/ui/select';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [language, setLanguage] = useState('ru');
 
   const translations = {
@@ -156,7 +158,7 @@ const Index = () => {
                 <Icon name="ShoppingBag" size={20} className="mr-2" />
                 {t.cta}
               </Button>
-              <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white">
+              <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white" onClick={() => navigate('/seller-registration')}>
                 <Icon name="Store" size={20} className="mr-2" />
                 {t.sellCta}
               </Button>
